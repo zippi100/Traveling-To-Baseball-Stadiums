@@ -1,0 +1,71 @@
+void graph::shortestPath(int othervertex) {
+unsigned int j , i , v;
+int smallestweight[myvertex.size()];
+vector<edge> tempedge;
+int tempkey;
+tempkey = getlocation(othervertex);
+tempedge = myvertex[tempkey].getedges();
+int maxweight = 99999;
+int minweight;
+bool weightFound[myvertex.size()];
+
+
+
+for(j = 0 ; j < myvertex.size() ; j++)
+{
+	smallestweight[j] = maxweight;
+	weightFound[j] = false;
+}
+smallestweight[tempkey] = 0;
+for(j = 0 ; j < tempedge.size() ; j++)
+{
+	smallestweight[getlocation(tempedge[j].getdestination())] = tempedge[j].getdistance();
+}
+
+
+smallestweight[tempkey] = 0;
+weightFound[tempkey] = true;
+
+for(i = 0 ; i < myvertex.size() ; i++)
+{
+	minweight = maxweight;
+
+	for(j = 0 ; j< myvertex.size() ; j++)
+		if(!weightFound[j])
+			if(smallestweight[j] < minweight)
+			{
+				v = j;
+				minweight = smallestweight[v];
+			}
+
+	weightFound[v] = true;
+
+	for(j = 0 ; j < tempedge.size()  ; j++)
+		if(!weightFound[getlocation(j)])
+			if(minweight + tempedge[j].getdistance()  <  smallestweight[   getlocation(tempedge[j].getdestination())]     )
+				smallestweight[getlocation(j)] = minweight + tempedge[j].getdistance();
+
+
+}
+
+
+for(i = 0 ; i < myvertex.size() ; i++)
+{
+	cout << i << " Location " << weightFound[v] << endl;
+	cout << smallestweight[i] << endl;
+}
+cout << "test done" << endl;
+}
+
+int graph::getlocation(int V) {
+
+
+	int index = 0;
+
+	while(!(V == myvertex[index].getkey()))
+	{
+		index++;
+	}
+
+	return index;
+}
