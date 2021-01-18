@@ -1,9 +1,5 @@
 /*************************************************************************
- * AUTHOR	     : Alex Adam
- * ASSIGNMENT #12: DFS
- * CLASS         : CS1D
- * SECTION       : MW: 5:30 - 7:20p
- * DUE DATE      : 4/21/14
+ * AUTHOR	 : Jeffrey Roe
  * **********************************************************************/
 #ifndef EDGE_H_
 #define EDGE_H_
