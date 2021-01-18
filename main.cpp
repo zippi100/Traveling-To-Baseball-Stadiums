@@ -1,5 +1,8 @@
 
 
+/*************************************************************************
+ * AUTHOR	 : Jeffrey Roe
+ * **********************************************************************/
 #include "graph.h"
 //void IOFILE(linkedListType<CustomerType> &somecustomer);
 //void SendPamphlet(linkedListType<CustomerType> &somecustomer);
